@@ -5,6 +5,7 @@
 
 <p align="center">
 <a href="https://polygonjs.com/vue2">Live Demo</a> |
+<a href="https://github.com/polygonjs/polygonjs-vue2">Vue 2 Component</a> |
 <a href="https://polygonjs.com">Polygonjs</a> |
 <a href="https://polygonjs.com/forum">Forum</a> |
 <a href="https://polygonjs.com/discord">Discord</a>
