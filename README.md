@@ -14,7 +14,7 @@
 
 # Vue 2 Component for Polygonjs
 
-This is repository shows an example on how to use [Polygonjs Vue 2 Component](https://github.com/polygonjs/polygonjs-vue2).
+This is repository shows an example on how to use [Polygonjs Vue 3 Component](https://github.com/polygonjs/polygonjs-vue3).
 
 
 <table style="margin:0px;padding:0px">
