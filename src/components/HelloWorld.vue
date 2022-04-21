@@ -1,41 +1,37 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript" target="_blank" rel="noopener">typescript</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <div class="wrapper">
+      <div class="box text text-right">In this page, we show how to load multiple scenes together</div>
+      <div class="box"><Scene01/></div>
+      <div class="box"><Scene02/></div>
+      <div class="box text text-left">
+        And you can also visit each scene separately, using the links at the top of the page, or here: 
+      <nav>
+        <router-link to="/scene_01">Scene 01</router-link> |
+        <router-link to="/scene_02">Scene 02</router-link> |
+        <router-link to="/scene_03">Scene 03</router-link>
+      </nav>
+      </div>
+      <div class="box text text-right">And you can even play music on the piano</div>
+      <div class="box"><Scene03/></div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import Scene01 from '../views/Scene01.vue'
+import Scene02 from '../views/Scene02.vue'
+import Scene03 from '../views/Scene03.vue'
 
 export default Vue.extend({
   name: 'HelloWorld',
+  components: {
+    Scene01,
+    Scene02,
+    Scene03,
+  },
   props: {
     msg: String,
   },
@@ -57,5 +53,27 @@ li {
 }
 a {
   color: #42b983;
+}
+
+/* grid */
+.wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.box {
+  padding: 2px;
+}
+.box.text {
+  padding-top: 20px;
+}
+.box.text-left {
+  text-align: left;
+}
+.box.text-right {
+  text-align: right;
 }
 </style>

@@ -7,7 +7,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@polygonjs/vue2": "^1.1.252",
     "core-js": "^3.8.3",
+    "polygonjs-editor": "^1.1.252-1",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1"
   },
